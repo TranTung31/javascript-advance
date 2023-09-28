@@ -1,0 +1,31 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    var request = new XMLHttpRequest();
+
+    // Ví dụ bất đồng bộ 
+    // Hành động sau (Lấy data)
+    request.onreadystatechange = function () {
+        if (this.readyState == 4 ) {
+            // Typical action to be performed when the document is ready:
+            // console.log('check respone: ', request.responseText);
+            console.log(request);
+            console.log(request.status);
+        }
+    };
+
+    // Hành động trước (Gửi request)
+    request.open("GET", "https://jsonplaceholder.typicode.com/todoss", true);
+    request.send();
+</script>
+
+<body>
+    <h1>HTTP Requests</h1>
+</body>
+
+</html>
